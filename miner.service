@@ -1,0 +1,15 @@
+[Unit]
+Description=Miner Server
+After=network.target
+
+[Service]
+User=rasp
+Group=rasp
+Restart=on-failure
+ExecStart=/opt/backend/miner
+WorkingDirectory=/opt/backend
+StandardOutput=append:/var/log/miner/backend.log
+StandardError=append:/var/log/miner/backend.log
+
+[Install]
+WantedBy=multi-user.target

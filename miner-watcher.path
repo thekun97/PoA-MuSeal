@@ -1,0 +1,6 @@
+[Path]
+Unit=miner-watcher.service
+PathModified=/opt/backend
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Miner watcher
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=20
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl restart miner.service
+
+[Install]
+WantedBy=multi-user.target
