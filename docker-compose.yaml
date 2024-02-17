@@ -1,0 +1,23 @@
+version: '3'
+services:
+  miner-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "8080:8080"
+    networks:
+      - websocket-network
+
+  miner-client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    ports:
+      - "8081:8081"
+    networks:
+      - websocket-network
+
+networks:
+  websocket-network:
+    driver: bridge
